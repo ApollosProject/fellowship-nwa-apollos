@@ -24,6 +24,48 @@ class dataSource extends ActionAlgorithm.dataSource {
   //     summary: '',
   //   }));
   // }
+
+  contentFeedAlgorithm = async ({
+    channelIds = [],
+    limit = 20,
+    skip = 0,
+  } = {}) => {
+    const { ContentItem, Auth, Campus } = this.context.dataSources;
+
+    // custom, filter everything by campus
+    const { id } = Auth.getCurrentPerson();
+    const { id: campusId } = Campus.getForPerson({ id });
+    // this is gonna give me something like Fellowship Rogers
+    //
+    // TODO
+    // Congregation attribute value is 8701, returns values like 'fellowship-rogers'
+    // I need to figure out how to the link them
+    // then we could do AttributeValues.filter(8701 and value) and map the EntityId to get content items
+    //
+    // Campuses attribute
+    const campusItems2 = await this.request(
+      `Apollos/ContentChannelItemsByAttributeValue?attributeValues=${campusId}&attributeKey=CampusId`
+    )
+      .byContentChannelIds(channelIds)
+      .top(limit)
+      .skip(skip)
+      .get();
+
+    // const items = await ContentItem.byContentChannelIds(channelIds)
+    // .top(limit)
+    // .skip(skip)
+    // .get();
+
+    return items.map((item, i) => ({
+      id: `${item.id}${i}`,
+      title: item.title,
+      subtitle: get(item, 'contentChannel.name'),
+      relatedNode: { ...item, __type: ContentItem.resolveType(item) },
+      image: ContentItem.getCoverImage(item),
+      action: 'READ_CONTENT',
+      summary: ContentItem.createSummary(item),
+    }));
+  };
 }
 
 export { dataSource };
