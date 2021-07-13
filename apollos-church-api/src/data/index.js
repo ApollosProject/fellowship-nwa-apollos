@@ -30,7 +30,7 @@ import {
   Feature,
   FeatureFeed,
   // ActionAlgorithm,
-  Event,
+  // Event,
   PrayerRequest,
   Persona,
   Person,
@@ -42,6 +42,7 @@ import * as ActionAlgorithm from './ActionAlgorithms';
 import * as Vimeo from './Vimeo';
 import * as Youtube from './Youtube';
 import * as ContentItem from './ContentItem';
+import * as Event from './Event';
 
 // This module is used to attach Rock User updating to the OneSignal module.
 // This module includes a Resolver that overides a resolver defined in `OneSignal`
