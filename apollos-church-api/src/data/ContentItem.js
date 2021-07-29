@@ -217,14 +217,16 @@ class dataSource extends ContentItem.dataSource {
 
   createHtmlHeader = (item) => {
     let header = '';
-    if (item.attributeValues.vimeoId?.value) {
-      header = `${header}<a href="https://vimeo.com/${
-        item.attributeValues.vimeoId?.value
-      }">Play Sermon Video</a>`;
-    } else if (item.attributeValues.youtubeId?.value) {
-      header = `${header}<a href="https://www.youtube.com/watch?v=${
-        item.attributeValues.youtubeId?.value
-      }">Play Sermon Video</a>`;
+    if (!item.attributeValues.resiVodurl?.value) {
+      if (item.attributeValues.vimeoId?.value) {
+        header = `${header}<a href="https://vimeo.com/${
+          item.attributeValues.vimeoId?.value
+        }">Play Sermon Video</a>`;
+      } else if (item.attributeValues.youtubeId?.value) {
+        header = `${header}<a href="https://www.youtube.com/watch?v=${
+          item.attributeValues.youtubeId?.value
+        }">Play Sermon Video</a>`;
+      }
     }
 
     if (header !== '') header = `<p>${header}</p>`;
