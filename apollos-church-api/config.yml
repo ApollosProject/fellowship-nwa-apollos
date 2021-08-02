@@ -126,7 +126,7 @@ TABS:
           limit: 6
           channelIds: [19]
       type: HeroList
-    - title: Community Events
+    - subtitle: Community Events
       type: HorizontalCardList
       algorithms:
         - type: CONTENT_FEED
@@ -169,13 +169,13 @@ TABS:
           id: 12
           name: All Series
 
-  PRAY: # NOT USED
-    - algorithms: [DAILY_PRAYER]
-      isCard: false
-      type: PrayerList
-      title: Daily Prayer
-    - type: VerticalPrayerList
-      title: Your Prayers
+  # PRAY: # NOT USED
+  #   - algorithms: [DAILY_PRAYER]
+  #     isCard: false
+  #     type: PrayerList
+  #     title: Daily Prayer
+  #   - type: VerticalPrayerList
+  #     title: Your Prayers
 
   CONNECT:
     - type: ActionTable
