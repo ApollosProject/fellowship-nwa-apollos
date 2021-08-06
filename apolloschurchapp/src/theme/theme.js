@@ -105,6 +105,10 @@ const overrides = {
     promptText:
       'Sign in for a personalized experience that helps you grow and connect with God and others.',
   },
+  'ui-kit.Button.ButtonStyles': {
+    backgroundColor: lightColors.secondary,
+    borderColor: lightColors.secondary,
+  },
   'ui-onboarding.Slide.SlideContent.Title': {
     textAlign: 'center',
   },
