@@ -256,7 +256,7 @@ class dataSource extends ContentItem.dataSource {
       if (item.attributeValues.vimeoId?.value) {
         header = `${header}<a href="https://vimeo.com/${
           item.attributeValues.vimeoId?.value
-        }">Watch on YouTube</a>`;
+        }">Watch on Vimeo</a>`;
       } else if (item.attributeValues.youtubeId?.value) {
         header = `${header}<a href="https://www.youtube.com/watch?v=${
           item.attributeValues.youtubeId?.value
