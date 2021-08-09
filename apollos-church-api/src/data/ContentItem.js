@@ -264,7 +264,13 @@ class dataSource extends ContentItem.dataSource {
       }
     }
 
-    if (header !== '') header = `<p>${header}</p>`;
+    if (header !== '' && item.attributeValues.summary.value !== '') {
+      // Checks for Vimeo or YouTube link and Summary content
+      header = `<p>${header}</p><h3>About this Message</h3>`;
+    } else if (item.attributeValues.summary.value !== '') {
+      // Checks for Summary content
+      header = `<h3>About this Message</h3>`;
+    }
 
     return header;
   };
