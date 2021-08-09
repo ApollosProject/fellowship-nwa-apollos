@@ -98,6 +98,15 @@ const overlays = ({ colors: themeColors }) => ({
  * ```
  */
 
+const buttons = () => ({
+  default: {
+    // Full Width Button Text
+    fill: '#ffffff',
+    // Hide Follow Request Button Text
+    accent: '#ffffff',
+  },
+});
+
 const overrides = {
   // ui-auth.Entry will work once named entry is reviewed in core
   'ui-auth.Entry': {
@@ -167,8 +176,9 @@ const overrides = {
 };
 
 export default {
-  lightColors,
+  buttons,
   darkColors,
+  lightColors,
   overlays,
   overrides,
   typography,
