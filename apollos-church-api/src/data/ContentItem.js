@@ -184,17 +184,6 @@ class dataSource extends ContentItem.dataSource {
     const features = await super.getFeatures(item);
     const { Feature, Matrix, BinaryFiles } = this.context.dataSources;
 
-    // scripture ref
-    // const reference = item.attributeValues.bookoftheBible?.value;
-    // if (reference) {
-    //   features.push(
-    //     Feature.createScriptureFeature({
-    //       reference,
-    //       id: `${item.attributeValues.bookoftheBible.id}`,
-    //     })
-    //   );
-    // }
-
     // relatedFilesorLinks
     const resources = await Matrix.getItemsFromGuid(
       item.attributeValues.relatedFilesorLinks?.value
