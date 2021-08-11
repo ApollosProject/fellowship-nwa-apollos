@@ -265,7 +265,7 @@ interface ContentParentNode {
   childContentItemsConnection(first: Int, after: String): ContentItemsConnection
 }
 
-type ContentSeriesContentItem implements ContentItem & Node & ContentNode & Card & VideoNode & AudioNode & ContentChildNode & ContentParentNode & ThemedNode & ProgressNode & LikableNode & ShareableNode & FeaturesNode {
+type ContentSeriesContentItem implements ContentItem & Node & ContentNode & Card & VideoNode & AudioNode & ContentChildNode & ContentParentNode & ThemedNode & ProgressNode & LikableNode & FeaturesNode & ShareableNode {
   id: ID!
   title(hyphenated: Boolean): String
   publishDate: String
@@ -284,9 +284,9 @@ type ContentSeriesContentItem implements ContentItem & Node & ContentNode & Card
   scriptures: [Scripture]
   isLiked: Boolean
   likedCount: Int
-  sharing: SharableContentItem
   features: [Feature] @deprecated(reason: "Use featureFeed")
   featureFeed: FeatureFeed
+  sharing: SharableContentItem
 }
 
 type Device implements Node {
@@ -295,7 +295,7 @@ type Device implements Node {
   notificationsEnabled: Boolean!
 }
 
-type DevotionalContentItem implements ContentItem & Node & ContentNode & Card & VideoNode & AudioNode & ContentChildNode & ContentParentNode & ThemedNode & ScriptureNode & LikableNode & ShareableNode & FeaturesNode {
+type DevotionalContentItem implements ContentItem & Node & ContentNode & Card & VideoNode & AudioNode & ContentChildNode & ContentParentNode & ThemedNode & ScriptureNode & LikableNode & FeaturesNode & ShareableNode {
   id: ID!
   title(hyphenated: Boolean): String
   publishDate: String
@@ -312,9 +312,9 @@ type DevotionalContentItem implements ContentItem & Node & ContentNode & Card & 
   scriptures: [Scripture]
   isLiked: Boolean
   likedCount: Int
-  sharing: SharableContentItem
   features: [Feature] @deprecated(reason: "Use featureFeed")
   featureFeed: FeatureFeed
+  sharing: SharableContentItem
 }
 
 type Event implements Node & ContentNode {
@@ -627,12 +627,16 @@ type Query {
   _placeholder: Boolean
   node(id: ID!): Node
   likedContent(first: Int, after: String): ContentItemsConnection
-  contentChannels: [ContentChannel] @deprecated(reason: "No longer supported.")
+  suggestedFollows: [Person]
+  searchPeople(name: String, first: Int, after: String): SearchPeopleResultsConnection
+  tabFeedFeatures(tab: Tab!, campusId: ID): FeatureFeed
+  userFeedFeatures: [Feature] @deprecated(reason: "Use homeFeedFeatures or discoverFeedFeatures")
+  homeFeedFeatures(campusId: ID): FeatureFeed @deprecated(reason: "Use tabFeedFeatures(tab: HOME)")
+  discoverFeedFeatures: FeatureFeed @deprecated(reason: "Use tabFeedFeatures(tab: DISCOVER)")
   campaigns: ContentItemsConnection
   userFeed(first: Int, after: String): ContentItemsConnection
   personaFeed(first: Int, after: String): ContentItemsConnection
-  suggestedFollows: [Person]
-  searchPeople(name: String, first: Int, after: String): SearchPeopleResultsConnection
+  contentChannels: [ContentChannel] @deprecated(reason: "No longer supported.")
   currentUser: AuthenticatedUser
   userExists(identity: String): USER_AUTH_STATUS
   liveStream: LiveStream @deprecated(reason: "Use liveStreams, there may be multiple.")
@@ -642,10 +646,6 @@ type Query {
   userPass: Pass
   search(query: String!, first: Int, after: String): SearchResultsConnection
   campuses(location: CampusLocationInput): [Campus]
-  tabFeedFeatures(tab: Tab!, campusId: ID): FeatureFeed
-  userFeedFeatures: [Feature] @deprecated(reason: "Use homeFeedFeatures or discoverFeedFeatures")
-  homeFeedFeatures(campusId: ID): FeatureFeed @deprecated(reason: "Use tabFeedFeatures(tab: HOME)")
-  discoverFeedFeatures: FeatureFeed @deprecated(reason: "Use tabFeedFeatures(tab: DISCOVER)")
   getEvents(ministry: String): [Event]
   followRequests: [Person]
   usersFollowing: [Person]
@@ -765,7 +765,7 @@ enum ThemeType {
   DARK
 }
 
-type UniversalContentItem implements ContentItem & Node & ContentNode & Card & VideoNode & AudioNode & ContentChildNode & ContentParentNode & ThemedNode & LikableNode & ShareableNode & FeaturesNode {
+type UniversalContentItem implements ContentItem & Node & ContentNode & Card & VideoNode & AudioNode & ContentChildNode & ContentParentNode & ThemedNode & LikableNode & FeaturesNode & ShareableNode {
   id: ID!
   title(hyphenated: Boolean): String
   publishDate: String
@@ -781,9 +781,9 @@ type UniversalContentItem implements ContentItem & Node & ContentNode & Card & V
   theme: Theme
   isLiked: Boolean
   likedCount: Int
-  sharing: SharableContentItem
   features: [Feature] @deprecated(reason: "Use featureFeed")
   featureFeed: FeatureFeed
+  sharing: SharableContentItem
 }
 
 enum UPDATEABLE_PROFILE_FIELDS {
@@ -859,7 +859,7 @@ type WebviewFeature implements Feature & Node {
   url: String
 }
 
-type WeekendContentItem implements ContentItem & Node & ContentNode & Card & VideoNode & AudioNode & ContentChildNode & ContentParentNode & ThemedNode & LikableNode & LiveNode & ShareableNode & FeaturesNode {
+type WeekendContentItem implements ContentItem & Node & ContentNode & Card & VideoNode & AudioNode & ContentChildNode & ContentParentNode & ThemedNode & LikableNode & FeaturesNode & LiveNode & ShareableNode {
   id: ID!
   title(hyphenated: Boolean): String
   publishDate: String
@@ -875,9 +875,9 @@ type WeekendContentItem implements ContentItem & Node & ContentNode & Card & Vid
   theme: Theme
   isLiked: Boolean
   likedCount: Int
-  liveStream: LiveStream
-  sharing: SharableContentItem
   features: [Feature] @deprecated(reason: "Use featureFeed")
   featureFeed: FeatureFeed
+  liveStream: LiveStream
+  sharing: SharableContentItem
 }
 
