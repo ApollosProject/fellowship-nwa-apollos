@@ -173,6 +173,11 @@ const overrides = {
     description:
       'Follow the journal entries and prayer requests of others in your congregation.',
   },
+  'ui-prayer.PrayerView.SecondaryActionButton': {
+    style: {
+      backgroundColor: '#00000000',
+    },
+  },
 };
 
 export default {
