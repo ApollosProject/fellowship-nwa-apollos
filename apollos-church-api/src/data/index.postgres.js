@@ -1,3 +1,5 @@
+import fs from 'fs';
+import path from 'path';
 import { gql } from 'apollo-server';
 
 import {
@@ -17,8 +19,6 @@ import {
   Followings,
   Interactions,
   RockConstants,
-  // ContentItem,
-  // ContentChannel,
   Sharable,
   Auth,
   PersonalDevice,
@@ -27,13 +27,14 @@ import {
   Campus,
   Group,
   BinaryFiles,
-  Feature,
   FeatureFeed,
-  // ActionAlgorithm,
   // Event,
   // PrayerRequest,
-  Persona,
   // Person as RockPerson,
+  // ContentItem as RockContentItem,
+  // ContentChannel,
+  Feature as RockFeature,
+  // ActionAlgorithm as RockActionAlgorithm,
 } from '@apollosproject/data-connector-rock';
 
 import {
@@ -43,18 +44,20 @@ import {
   Follow,
   Notification,
   NotificationPreference,
+  Tag,
   Campus as PostgresCampus,
   Person as PostgresPerson,
-  // Media as PostgresMedia,
-  // ContentItem as PostgresContentItem,
-  // ContentItemsConnection,
-  // ContentItemCategory,
-  // Tag,
+  Media as PostgresMedia,
+  Feature as PostgresFeature,
+  ContentItem as PostgresContentItem,
+  ContentItemsConnection,
+  ContentItemCategory,
+  ActionAlgorithm as PostgresActionAlgorithm,
 } from '@apollosproject/data-connector-postgres';
 
 import * as Theme from './theme';
-import * as ActionAlgorithm from './ActionAlgorithms';
-import * as ContentItem from './ContentItem';
+import * as RockActionAlgorithm from './ActionAlgorithms';
+import * as RockContentItem from './ContentItem';
 import * as ContentChannel from './ContentChannel';
 import * as Event from './Event';
 import * as PrayerRequest from './PrayerRequest';
@@ -63,21 +66,40 @@ import * as RockPerson from './RockPerson';
 
 // This modules ties together certain updates so they occurs in both Rock and Postgres.
 // Will be eliminated in the future through an enhancement to the Shovel
-import { Person, OneSignal } from './rockWithPostgres';
+import {
+  Person,
+  OneSignal,
+  Followings as FollowingsPostgresBridge,
+} from './rockWithPostgres';
+
+const postgresContentModules = {
+  ActionAlgorithm: PostgresActionAlgorithm,
+  Feature: PostgresFeature,
+  PostgresMedia,
+  Tag,
+  ContentItem: PostgresContentItem,
+  ContentItemsConnection,
+  ContentChannel: ContentItemCategory,
+};
+
+const rockContentModules = {
+  ActionAlgorithm: RockActionAlgorithm,
+  Feature: RockFeature,
+  ContentItem: RockContentItem,
+  ContentChannel,
+};
 
 const data = {
   Interfaces,
   Followings,
-  ContentChannel,
-  ContentItem,
+  FollowingsPostgresBridge, // This entry needs to come after Followings.
+  FeatureFeed,
   RockPerson, // This entry needs to come before (postgres) Person
   BinaryFiles, // This entry needs to come before (postgres) Person
   PostgresPerson, // Postgres person for now, as we extend this dataSource in the 'rockWithPostgres' file
-  // PostgresMedia,
-  // PostgresContentItem,
-  // ContentItemsConnection,
-  // ContentItemCategory,
-  // Tag,
+  ...(fs.existsSync(path.join(__dirname, '../..', 'config.postgres.yml'))
+    ? postgresContentModules
+    : rockContentModules),
   Cloudinary,
   Auth,
   AuthSms,
@@ -95,9 +117,6 @@ const data = {
   Template,
   Campus,
   Group,
-  Feature,
-  FeatureFeed,
-  ActionAlgorithm,
   Event,
   Cache,
   PrayerRequest,
@@ -106,7 +125,6 @@ const data = {
   UserFlag,
   Follow,
   PostgresCampus,
-  Persona,
   Notification,
   NotificationPreference,
   OneSignal,
