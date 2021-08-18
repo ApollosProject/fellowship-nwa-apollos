@@ -16,8 +16,6 @@ const lightColors = {
   secondary: '#4E9AF4',
   tertiary: '#AFAFAF',
   quaternary: '#808080',
-
-  screen: '#F8F8FB',
 };
 
 const darkColors = {
