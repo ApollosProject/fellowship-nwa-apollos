@@ -220,7 +220,7 @@ TABS:
 
     - subtitle: Podcasts # Missing Content Channel in Rock
       algorithms:
-        - type: CONTENT_FEED
+        - type: PRIORITY_CONTENT_FEED
           arguments:
             limit: 6
             channelIds:
@@ -229,7 +229,7 @@ TABS:
 
     - subtitle: Fellowship Worship
       algorithms:
-        - type: CONTENT_FEED
+        - type: PRIORITY_CONTENT_FEED
           arguments:
             limit: 6
             channelIds:
