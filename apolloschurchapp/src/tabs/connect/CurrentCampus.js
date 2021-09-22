@@ -4,7 +4,6 @@ import { get } from 'lodash';
 import {
   ButtonLink,
   CardContent,
-  CardImage,
   H3,
   H4,
   PaddedView,
@@ -13,7 +12,7 @@ import {
   styled,
   withIsLoading,
   withTheme,
-  // GradientOverlayImage,
+  GradientOverlayImage,
 } from '@apollosproject/ui-kit';
 
 import { useNavigation } from '@react-navigation/core';
@@ -38,7 +37,7 @@ const Image = withTheme(({ theme }) => ({
   overlayColor: theme.colors.primary,
   overlayType: 'gradient-bottom',
   style: stretchyStyle,
-}))(CardImage);
+}))(GradientOverlayImage);
 
 const Content = styled(({ theme }) => ({
   alignItems: 'flex-start',
