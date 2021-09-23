@@ -1,7 +1,10 @@
+import Bugsnag from '@bugsnag/react-native';
+
 import './loadConfig';
 import { AppRegistry, YellowBox } from 'react-native';
 import ApollosConfig from '@apollosproject/config';
 
+Bugsnag.start();
 // temp fix for the promise.finally
 // https://github.com/storybookjs/storybook/issues/8371
 const fn = Promise.prototype.finally;
