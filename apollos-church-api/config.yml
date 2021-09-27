@@ -56,11 +56,216 @@ BIBLE_API:
 CLOUDINARY:
   URL: ${CLOUDINARY_URL}
 SUGGESTED_FOLLOWS:
-# TODO: find out what these should actually be, and why these two don't work.
   -
-    id: '713c6013-cd5d-40ea-af96-dec32e271981' # Justin Kraning
+    id: ded01391-dca5-45c7-b2bc-b2603a562d79 # Ryan Ceola
+    campusId: 64fd569a-1d74-4cc6-bc54-d56a85818629 # Mosaic
   -
-    id: '69e19717-1422-4f21-a81e-fe9a47ac5626' # David Jensen
+    id: fae3ddb0-e435-4133-9316-67366cb5e770 # Ashley Covert
+    campusId: 64fd569a-1d74-4cc6-bc54-d56a85818629 # Mosaic
+  -
+    id: d4bec2fd-8d49-4584-b87f-180b9e48875b # Bethany Donoghue
+    campusId: 64fd569a-1d74-4cc6-bc54-d56a85818629 # Mosaic
+  -
+    id: 470a476c-b53b-43ee-843c-e14f7c0974e2 # Jerry Dudley
+    campusId: 64fd569a-1d74-4cc6-bc54-d56a85818629 # Mosaic
+  -
+    id: da580f63-afbf-4dcd-b4ad-1aa79bdc9f47 # Sue Dudley
+    campusId: 64fd569a-1d74-4cc6-bc54-d56a85818629 # Mosaic
+  -
+    id: 48a55287-bcf0-44e1-9d26-2fd5b310d282 # Collin Jackson
+    campusId: 64fd569a-1d74-4cc6-bc54-d56a85818629 # Mosaic
+  -
+    id: d256adfb-d808-4aee-a300-66799eabe429 # Scott Jones
+    campusId: 64fd569a-1d74-4cc6-bc54-d56a85818629 # Mosaic
+  -
+    id: f2d88141-325b-46f5-88e6-8de0d575b6b2 # Matt Noetzel
+    campusId: 64fd569a-1d74-4cc6-bc54-d56a85818629 # Mosaic
+  -
+    id: 5558716f-04bc-40eb-9bce-f9ee4769c920 # Doug Raines
+    campusId: 64fd569a-1d74-4cc6-bc54-d56a85818629 # Mosaic
+  -
+    id: f016514e-8ef1-4483-90fa-4dd1b65774f4 # Laura Self
+    campusId: 64fd569a-1d74-4cc6-bc54-d56a85818629 # Mosaic
+  -
+    id: 0ee94504-82b1-4291-82c4-da4eb411e7a8 # Carrie Tucker
+    campusId: 64fd569a-1d74-4cc6-bc54-d56a85818629 # Mosaic
+  -
+    id: 65ff4387-6dd8-4cc2-9ac5-cff0a61f0c96 # Melo Albritton
+    campusId: e7098d9a-d52b-4442-976d-bc21b45faa7f # Rogers
+  -
+    id: 277a11b4-7ebe-4fcb-a965-aaaac784479e # Amy Andersen
+    campusId: e7098d9a-d52b-4442-976d-bc21b45faa7f # Rogers
+  -
+    id: 1184231a-9689-4ec5-810c-47fbdca18700 # Pat Anderson
+    campusId: e7098d9a-d52b-4442-976d-bc21b45faa7f # Rogers
+  -
+    id: 6fabf7e4-b55a-4640-8183-b7a9eb105cb5 # Matt Archer
+    campusId: e7098d9a-d52b-4442-976d-bc21b45faa7f # Rogers
+  -
+    id: 006b5b8c-c383-4bfb-9227-0baa2df04971 # John Barclay
+    campusId: e7098d9a-d52b-4442-976d-bc21b45faa7f # Rogers
+  -
+    id: be166306-1a87-4dc9-8eb7-9fa13f1cc9fc # Sherri Barclay
+    campusId: e7098d9a-d52b-4442-976d-bc21b45faa7f # Rogers
+  -
+    id: f8f42229-d83d-4796-8942-ff3fff712fec # Karen Campbell
+    campusId: e7098d9a-d52b-4442-976d-bc21b45faa7f # Rogers
+  -
+    id: ad7e1382-0c47-4506-b9eb-d051dffa36bf # Amber Cate
+    campusId: e7098d9a-d52b-4442-976d-bc21b45faa7f # Rogers
+  -
+    id: ae39ce2e-baa9-41b6-9e2a-bf177c55c389 # Jimmy Cummings
+    campusId: e7098d9a-d52b-4442-976d-bc21b45faa7f # Rogers
+  -
+    id: 05a6f638-c409-4fdc-94dd-69a43ed8f5c3 # Beth Davies
+    campusId: e7098d9a-d52b-4442-976d-bc21b45faa7f # Rogers
+  -
+    id: 35bf50c8-5d4a-4f2c-b44c-0fd7603fb332 # Simon Foster
+    campusId: e7098d9a-d52b-4442-976d-bc21b45faa7f # Rogers
+  -
+    id: 53abadd7-e37f-4a6e-9680-58cb00a82b39 # Caleb Freeman
+    campusId: e7098d9a-d52b-4442-976d-bc21b45faa7f # Rogers
+  -
+    id: 0843299b-da61-488d-8025-41553625b61a # Sam Hannon
+    campusId: e7098d9a-d52b-4442-976d-bc21b45faa7f # Rogers
+  -
+    id: a1ee1ef5-526f-4671-93e1-ac7da9c35868 # Emily Hansen
+    campusId: e7098d9a-d52b-4442-976d-bc21b45faa7f # Rogers
+  -
+    id: 55c5b1aa-12a4-4b5d-8476-8123db03262f # Derek Horn
+    campusId: e7098d9a-d52b-4442-976d-bc21b45faa7f # Rogers
+  -
+    id: 2c5476c7-833b-4624-873e-b713dce865a8 # Kyle Jackson
+    campusId: e7098d9a-d52b-4442-976d-bc21b45faa7f # Rogers
+  -
+    id: 8708d301-abf5-4185-96b8-ba0bf527b77e # Barbie Lay
+    campusId: e7098d9a-d52b-4442-976d-bc21b45faa7f # Rogers
+  -
+    id: 3e2fe5ba-fee0-450d-b68c-47fe3051fbe7 # Abbie Lay
+    campusId: e7098d9a-d52b-4442-976d-bc21b45faa7f # Rogers
+  -
+    id: e88dd92d-7e60-45f8-918c-70cd4664c4ad # Christy Morris
+    campusId: e7098d9a-d52b-4442-976d-bc21b45faa7f # Rogers
+  -
+    id: a3e38f60-df23-4dbb-890a-adde83717d99 # Mike Mulvaney
+    campusId: e7098d9a-d52b-4442-976d-bc21b45faa7f # Rogers
+  -
+    id: 698c93bc-e567-4aad-85e1-3667dbcb199a # Kyle Plunkett
+    campusId: e7098d9a-d52b-4442-976d-bc21b45faa7f # Rogers
+  -
+    id: f44999f2-e316-4529-996d-23a76a3f19e9 # Carrie Roddy
+    campusId: e7098d9a-d52b-4442-976d-bc21b45faa7f # Rogers
+  -
+    id: 74edbac1-b863-4151-a0e8-9705f11a6f07 # Whitney Simons
+    campusId: e7098d9a-d52b-4442-976d-bc21b45faa7f # Rogers
+  -
+    id: 361dba50-b12c-4ce5-831a-bc1c34237648 # Steve Veliquette
+    campusId: e7098d9a-d52b-4442-976d-bc21b45faa7f # Rogers
+  -
+    id: ccbe0ef7-8668-4ee2-96fd-d7bf0ec7e534 # Robyn Yates
+    campusId: e7098d9a-d52b-4442-976d-bc21b45faa7f # Rogers
+  -
+    id: e423a04a-56ee-4aed-934d-837067bc07bf # Garland Autry
+    campusId: 973c6561-5cfe-4821-b5c8-7dcda61b5785 # Fayetteville
+  -
+    id: 684ebcf1-e4e9-4e74-96b6-9a2bf055809c # Josh Barnard
+    campusId: 973c6561-5cfe-4821-b5c8-7dcda61b5785 # Fayetteville
+  -
+    id: fdb35c93-b8e0-4b42-bf59-8f617833f135 # Mary Beth Simpson
+    campusId: 973c6561-5cfe-4821-b5c8-7dcda61b5785 # Fayetteville
+  -
+    id: 76f4f9b8-5486-4f4e-93ac-f2f58620be7f # Margo Bodishbaugh
+    campusId: 973c6561-5cfe-4821-b5c8-7dcda61b5785 # Fayetteville
+  -
+    id: 0a306b68-7ba1-4559-883b-fbe11e0a27fd # Ryan Burton
+    campusId: 973c6561-5cfe-4821-b5c8-7dcda61b5785 # Fayetteville
+  -
+    id: 6c157f9b-0f53-4e71-84a0-234009c2f2d0 # Jimmy Cook
+    campusId: 973c6561-5cfe-4821-b5c8-7dcda61b5785 # Fayetteville
+  -
+    id: 8c82fcc8-8eb0-45d9-ad28-f05acdc72f6f # Ann Difani
+    campusId: 973c6561-5cfe-4821-b5c8-7dcda61b5785 # Fayetteville
+  -
+    id: 18609344-69c5-429b-814b-fad8b89ca738 # Gretchen Friesen
+    campusId: 973c6561-5cfe-4821-b5c8-7dcda61b5785 # Fayetteville
+  -
+    id: ca0f503e-bdbf-4ed7-b7e8-728a0d0ec53e # Kerri Holt
+    campusId: 973c6561-5cfe-4821-b5c8-7dcda61b5785 # Fayetteville
+  -
+    id: 43cd147e-673a-452a-af87-8aa0eb5bd5b0 # Isaiah Maina
+    campusId: 973c6561-5cfe-4821-b5c8-7dcda61b5785 # Fayetteville
+  -
+    id: 7314b7f7-11cd-4172-b9c2-1be3e6b602bd # Aaron Marshall
+    campusId: 973c6561-5cfe-4821-b5c8-7dcda61b5785 # Fayetteville
+  -
+    id: e8243ede-db94-4eaa-83f4-802d79b879b2 # Dave Matthews
+    campusId: 973c6561-5cfe-4821-b5c8-7dcda61b5785 # Fayetteville
+  -
+    id: fbed8fbb-754d-41c6-9f96-8327b0cdc5c7 # Hallie May
+    campusId: 973c6561-5cfe-4821-b5c8-7dcda61b5785 # Fayetteville
+  -
+    id: 5a591742-1aae-44d2-8813-90846213a0e6 # Lorei McMillen
+    campusId: 973c6561-5cfe-4821-b5c8-7dcda61b5785 # Fayetteville
+  -
+    id: 6342ae86-2995-4fb1-bbf1-1a11b5db8e88 # Jenny Michna
+    campusId: 973c6561-5cfe-4821-b5c8-7dcda61b5785 # Fayetteville
+  -
+    id: 8932ec32-148b-4c01-bef8-7a0353cd74ca # Tad Moore
+    campusId: 973c6561-5cfe-4821-b5c8-7dcda61b5785 # Fayetteville
+  -
+    id: 3807eaab-1edf-48e2-8983-8b40a901125a # Clark Nolen
+    campusId: 973c6561-5cfe-4821-b5c8-7dcda61b5785 # Fayetteville
+  -
+    id: e79da153-3a5b-4a30-b5bc-08b3ea055f0d # Aaron Parks
+    campusId: 973c6561-5cfe-4821-b5c8-7dcda61b5785 # Fayetteville
+  -
+    id: fee59f94-79fa-447d-8163-a824afadbdc6 # Michael Smith
+    campusId: 973c6561-5cfe-4821-b5c8-7dcda61b5785 # Fayetteville
+  -
+    id: 5a62f216-bc66-4d23-a0b9-a23fd005e2b5 # Caroline Turner
+    campusId: 973c6561-5cfe-4821-b5c8-7dcda61b5785 # Fayetteville
+  -
+    id: 9d6e3e11-6ff6-4fe8-a90a-68b0153780d7 # Ray Wagoner
+    campusId: 973c6561-5cfe-4821-b5c8-7dcda61b5785 # Fayetteville
+  -
+    id: a53704a2-cb6e-40e4-b8a0-42b22cf0bfd5 # Kathy Biggerstaff
+    campusId: b10f5f69-f92b-4b47-985a-abcce846fde2 # Bentonville
+  -
+    id: a829eb58-0bdc-4fc1-b3a9-bbb1559d1683 # Jpistpm C;oftpm
+    campusId: b10f5f69-f92b-4b47-985a-abcce846fde2 # Bentonville
+  -
+    id: 9e7de333-345d-4dad-80ca-5fbf7c314148 # Bill Freeze
+    campusId: b10f5f69-f92b-4b47-985a-abcce846fde2 # Bentonville
+  -
+    id: 05292e05-f33c-4c1c-b007-12fd40f404ee # Hunter House
+    campusId: b10f5f69-f92b-4b47-985a-abcce846fde2 # Bentonville
+  -
+    id: 5308230f-2ef5-4b4a-ad23-59ba5ee0f80f # Beth Kenyon
+    campusId: b10f5f69-f92b-4b47-985a-abcce846fde2 # Bentonville
+  -
+    id: 83105408-a93f-4107-9f1c-2e62611cc419 # Set Primm
+    campusId: b10f5f69-f92b-4b47-985a-abcce846fde2 # Bentonville
+  -
+    id: 58f384a7-9c57-4425-bf0f-4b3f603af36f # Abel Schafer
+    campusId: b10f5f69-f92b-4b47-985a-abcce846fde2 # Bentonville
+  -
+    id: 1fe55286-d421-4dde-a37f-72ce118c4146 # Mark Schatzman
+    campusId: b10f5f69-f92b-4b47-985a-abcce846fde2 # Bentonville
+  -
+    id: b317e9b4-2f9b-426c-bcb5-07623e2675c3 # Bart Sego
+    campusId: b10f5f69-f92b-4b47-985a-abcce846fde2 # Bentonville
+  -
+    id: 5696efaf-93a1-4f63-9ffc-12cf6400d4af # Angie Simmermon
+    campusId: b10f5f69-f92b-4b47-985a-abcce846fde2 # Bentonville
+  -
+    id: c3293352-e0a6-40f3-b218-cfc785983d71 # Susan Thomas
+    campusId: b10f5f69-f92b-4b47-985a-abcce846fde2 # Bentonville
+  -
+    id: d9b98151-8678-4806-bf67-f206ac1060f7 # Tori Tutt
+    campusId: b10f5f69-f92b-4b47-985a-abcce846fde2 # Bentonville
+  -
+    id: 47634073-df15-4401-83c2-6a3b6dc56255 # Lauren Weatherly
+    campusId: b10f5f69-f92b-4b47-985a-abcce846fde2 # Bentonville
 
 # This key holds various properties that allow our GraphQL server to map to your Rock Instance
 ROCK_MAPPINGS:
