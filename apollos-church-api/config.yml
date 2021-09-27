@@ -293,9 +293,9 @@ ROCK_MAPPINGS:
     PersonaId: 210
 
   ALL_CONTENT_CHANNELS:
-    - 12
-    - 32
-    - 10
+    - 12 # Sermon Series
+    - 32 # Daily Scripture
+    - 10 # Sermons
 
   SERMON_CHANNEL_ID: 10
 
@@ -445,13 +445,6 @@ TABS:
             channelIds:
               - 35
       type: HorizontalCardList
-      primaryAction:
-        action: OPEN_CHANNEL
-        title: 'View All'
-        relatedNode:
-          __typename: ContentChannel
-          id: 35
-          name: Worship Music
 
   # PRAY: # NOT USED
   #   - algorithms: [DAILY_PRAYER]
