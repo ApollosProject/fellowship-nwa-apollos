@@ -305,14 +305,22 @@ TABS:
       isCard: false
       type: PrayerList
       subtitle: Daily Prayer
-    - subtitle: Grow Together
+    - subtitle: Grow Together # This pulls the Daily Scripture for today
       algorithms:
-        - type: CONTENT_FEED
+      - type: CONTENT_FEED
+        arguments:
+          limit: 1
+          channelIds:
+            - 32
+      type: VerticalCardList   
+    - algorithms:
+        - type: DAILY_SCRIPTURE_FEED # This pulls the 5 Daily Scriptures for this week
           arguments:
-            limit: 1
+            limit: 5
             channelIds:
               - 32
-      type: VerticalCardList
+      type: ActionList
+      isCard: false # This doesn't work for some reason?
     - algorithms:
         - type: CONTENT_FEED
           arguments:
