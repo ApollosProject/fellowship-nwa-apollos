@@ -55,9 +55,9 @@ class dataSource extends ContentItem.dataSource {
     });
     const congregationAttributeValues = await this.request('AttributeValues')
       .filter(
-        `AttributeId eq 8701 and Value eq '${name
+        `AttributeId eq 8701 and substringof('${name
           .toLowerCase()
-          .replace(' ', '-')}'`
+          .replace(' ', '-')}', Value) eq true`
       )
       .cache({ ttl: 60 })
       .get();
@@ -98,9 +98,9 @@ class dataSource extends ContentItem.dataSource {
     if (id === 12) {
       const congregationAttributeValues = await this.request('AttributeValues')
         .filter(
-          `AttributeId eq 17890 and Value eq '${name
+          `AttributeId eq 17890 and substringof('${name
             .toLowerCase()
-            .replace(' ', '-')}'`
+            .replace(' ', '-')}', Value) eq true`
         )
         .cache({ ttl: 60 })
         .get();
