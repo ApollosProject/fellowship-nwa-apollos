@@ -313,7 +313,8 @@ TABS:
           channelIds:
             - 32
       type: VerticalCardList   
-    - algorithms:
+    - subtitle: Weekly Readings
+      algorithms:
         - type: DAILY_SCRIPTURE_FEED # This pulls the 5 Daily Scriptures for this week
           arguments:
             limit: 5

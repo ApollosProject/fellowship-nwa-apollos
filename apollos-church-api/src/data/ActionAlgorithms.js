@@ -67,7 +67,7 @@ class dataSource extends ActionAlgorithm.dataSource {
   async dailyScriptureFeedAlgorithm({
     category = '',
     channelIds = [],
-    limit = 20,
+    limit = 5,
     skip = 0,
   } = {}) {
     const { ContentItem } = this.context.dataSources;
