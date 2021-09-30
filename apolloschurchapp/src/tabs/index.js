@@ -94,6 +94,20 @@ const FellowshipIcon = withTheme(({ theme }) => ({
   fill: theme.type === 'dark' ? '#FFFFFF' : theme.colors.primary,
 }))(Icon);
 
+const WatchListenIcon = withTheme(({ theme }) => ({
+  name: 'watch-listen',
+  size: theme.sizing.baseUnit * 2,
+  fill: theme.type === 'dark' ? '#FFFFFF' : theme.colors.primary,
+}))(Icon);
+
+const EventsIcon = withTheme(({ theme }) => ({
+  name: 'events',
+  size: theme.sizing.baseUnit * 2,
+  fill: theme.type === 'dark' ? '#FFFFFF' : theme.colors.primary,
+}))(Icon);
+
+const BlankHeaderCenter = () => null;
+
 const CustomConnectScreen = () => (
   <ConnectScreenConnected
     ActionTable={ActionTable}
@@ -144,12 +158,24 @@ const HomeTab = createFeatureFeedTab({
 });
 
 const EventsTab = createFeatureFeedTab({
+  options: {
+    headerLeft: EventsIcon,
+    headerRight: HeaderRight,
+    headerCenter: BlankHeaderCenter,
+    headerLargeTitle: false,
+  },
   tabName: 'Events',
   feedName: 'READ',
   TabComponent: CampusTabComponent,
 });
 
 const WatchTab = createFeatureFeedTab({
+  options: {
+    headerLeft: WatchListenIcon,
+    headerRight: HeaderRight,
+    headerCenter: BlankHeaderCenter,
+    headerLargeTitle: false,
+  },
   tabName: 'Watch',
   feedName: 'WATCH',
   TabComponent: CampusTabComponent,
