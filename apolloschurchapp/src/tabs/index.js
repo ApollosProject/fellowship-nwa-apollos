@@ -48,9 +48,9 @@ SearchButton.propTypes = {
 };
 
 const Avatar = withTheme(({ theme: { sizing: { baseUnit } } }) => ({
-  size: 'small',
+  size: 'xsmall',
   containerStyle: {
-    paddingBottom: baseUnit * 0.25,
+    marginLeft: baseUnit,
   },
 }))(UserAvatarConnected);
 
@@ -66,7 +66,7 @@ ProfileButton.propTypes = {
   onPress: PropTypes.func,
 };
 
-const HeaderLeft = () => {
+const HeaderAvatar = () => {
   const navigation = useNavigation();
   return (
     <ProfileButton
@@ -77,7 +77,7 @@ const HeaderLeft = () => {
   );
 };
 // const HeaderCenter = () => <HeaderLogo source={require('./wordmark.png')} />;
-const HeaderRight = () => {
+const HeaderSearch = () => {
   const navigation = useNavigation();
   return (
     <SearchButton
@@ -87,6 +87,13 @@ const HeaderRight = () => {
     />
   );
 };
+
+const HeaderRight = () => (
+  <>
+    <HeaderSearch />
+    <HeaderAvatar />
+  </>
+);
 
 const FellowshipIcon = withTheme(({ theme }) => ({
   name: 'fellowship',
@@ -147,9 +154,9 @@ const CustomConnectScreen = () => (
 const HomeTab = createFeatureFeedTab({
   options: {
     headerHideShadow: true,
-    headerLeft: HeaderLeft,
+    headerLeft: FellowshipIcon,
     headerRight: HeaderRight,
-    headerCenter: FellowshipIcon,
+    headerCenter: BlankHeaderCenter,
     headerLargeTitle: false,
   },
   tabName: 'Home',
@@ -179,6 +186,18 @@ const WatchTab = createFeatureFeedTab({
   tabName: 'Watch',
   feedName: 'WATCH',
   TabComponent: CampusTabComponent,
+});
+
+const ConnectTab = createFeatureFeedTab({
+  options: {
+    headerLeft: FellowshipIcon,
+    headerRight: HeaderRight,
+    headerCenter: BlankHeaderCenter,
+    headerLargeTitle: false,
+  },
+  tabName: 'Connect',
+  feedName: 'CONNECT',
+  TabComponent: CustomConnectScreen,
 });
 
 const { Navigator, Screen } = createBottomTabNavigator();
@@ -227,7 +246,7 @@ const TabNavigator = () => {
       />
       <Screen
         name="Connect"
-        component={CustomConnectScreen}
+        component={ConnectTab}
         options={{ tabBarIcon: tabBarIcon('user') }}
       />
     </ThemedTabNavigator>
