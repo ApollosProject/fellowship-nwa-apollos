@@ -307,7 +307,7 @@ TABS:
       subtitle: Daily Prayer
     - subtitle: Grow Together # This pulls the Daily Scripture for today
       algorithms:
-      - type: CONTENT_FEED
+      - type: DAILY_SCRIPTURE_FEED
         arguments:
           limit: 1
           channelIds:
