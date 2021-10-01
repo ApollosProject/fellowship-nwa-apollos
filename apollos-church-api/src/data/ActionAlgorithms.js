@@ -1,4 +1,5 @@
 import { ActionAlgorithm } from '@apollosproject/data-connector-rock';
+import { isThisWeek } from 'date-fns';
 
 class dataSource extends ActionAlgorithm.dataSource {
   ACTION_ALGORITHMS = {
@@ -74,7 +75,7 @@ class dataSource extends ActionAlgorithm.dataSource {
 
     const items = (await Promise.all(
       channelIds.map(async (channel) =>
-        (await ContentItem.byContentChannelId(channel, category))
+        (await ContentItem.byContentChannelId(channel, category, false))
           // First, get all the items for this week (even if not live yet)
           .top(limit)
           .skip(skip)
@@ -83,7 +84,11 @@ class dataSource extends ActionAlgorithm.dataSource {
       )
     )).flat();
 
-    return items.map((item, i) => ({
+    const itemsByDate = items.filter((key) =>
+      isThisWeek(new Date(key.startDateTime))
+    );
+
+    return itemsByDate.map((item, i) => ({
       id: `${item.id}${i}`,
       title: item.title,
       subtitle: item.contentChannel?.name,
