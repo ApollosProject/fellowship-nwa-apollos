@@ -105,9 +105,9 @@ class dataSource extends ActionAlgorithm.dataSource {
     const items = (await Promise.all(
       channelIds.map(async (channel) =>
         (await ContentItem.byContentChannelId(channel, category, false))
-          // First, get all the items for this week (even if not live yet)
           .top(limit)
           .skip(skip)
+          .sort([{ field: 'StartDateTime', direction: 'asc' }])
           // Then, sort chronologically ascending
           .get()
       )
