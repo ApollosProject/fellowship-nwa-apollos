@@ -79,7 +79,6 @@ class dataSource extends ActionAlgorithm.dataSource {
           .top(limit)
           .skip(skip)
           .sort([{ field: 'StartDateTime', direction: 'asc' }])
-          // Then, sort chronologically ascending
           .get()
       )
     )).flat();
