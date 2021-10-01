@@ -5,7 +5,7 @@ class dataSource extends ActionAlgorithm.dataSource {
   ACTION_ALGORITHMS = {
     ...this.ACTION_ALGORITHMS,
     PRIORITY_CONTENT_FEED: this.priorityContentFeedAlgorithm.bind(this),
-    DAILY_SCRIPTURE_FEED: this.dailyScriptureFeedAlgorithm.bind(this),
+    WEEKLY_SCRIPTURE_FEED: this.weeklyScriptureFeedAlgorithm.bind(this),
   };
 
   async contentFeedAlgorithm({
@@ -65,7 +65,7 @@ class dataSource extends ActionAlgorithm.dataSource {
     }));
   }
 
-  async dailyScriptureFeedAlgorithm({
+  async weeklyScriptureFeedAlgorithm({
     category = '',
     channelIds = [],
     limit = 5,
