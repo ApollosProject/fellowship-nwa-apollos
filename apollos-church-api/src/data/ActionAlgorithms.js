@@ -1,5 +1,5 @@
 import { ActionAlgorithm } from '@apollosproject/data-connector-rock';
-import { isThisWeek } from 'date-fns';
+import { format, isThisWeek } from 'date-fns';
 
 class dataSource extends ActionAlgorithm.dataSource {
   ACTION_ALGORITHMS = {
@@ -90,7 +90,7 @@ class dataSource extends ActionAlgorithm.dataSource {
     return itemsByDate.map((item, i) => ({
       id: `${item.id}${i}`,
       title: item.title,
-      subtitle: item.contentChannel?.name,
+      subtitle: format(new Date(item.startDateTime), 'E, MMM d') || '',
       relatedNode: { ...item, __type: ContentItem.resolveType(item) },
       image: ContentItem.getCoverImage(item),
       action: 'READ_CONTENT',
