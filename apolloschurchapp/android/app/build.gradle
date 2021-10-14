@@ -142,6 +142,8 @@ configurations.all {
 }
 
 android {
+    ndkVersion rootProject.ext.ndkVersion
+    
     compileSdkVersion rootProject.ext.compileSdkVersion
 
     compileOptions {
