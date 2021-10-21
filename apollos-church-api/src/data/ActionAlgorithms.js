@@ -17,6 +17,7 @@ class dataSource extends ActionAlgorithm.dataSource {
   };
 
   async contentFeedAlgorithm({
+    subtitle = '',
     category = '',
     channelIds = [],
     limit = 20,
@@ -36,7 +37,7 @@ class dataSource extends ActionAlgorithm.dataSource {
     return items.map((item, i) => ({
       id: `${item.id}${i}`,
       title: item.title,
-      subtitle: item.contentChannel?.name,
+      subtitle: item.contentChannel?.name || subtitle,
       relatedNode: { ...item, __type: ContentItem.resolveType(item) },
       image: ContentItem.getCoverImage(item),
       action: 'READ_CONTENT',

@@ -189,6 +189,7 @@ TABS:
           limit: 1
           channelIds:
             - 32
+          subtitle: Today's Reading
       type: VerticalCardList   
     - subtitle: Weekly Readings
       algorithms:
