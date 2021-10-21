@@ -1,6 +1,7 @@
 import { ActionAlgorithm } from '@apollosproject/data-connector-rock';
 import {
   format,
+  formatISO,
   isAfter,
   isBefore,
   parseISO,
@@ -77,7 +78,7 @@ class dataSource extends ActionAlgorithm.dataSource {
   async weeklyScriptureFeedAlgorithm({
     category = '',
     channelIds = [],
-    limit = 50,
+    limit = 5,
     skip = 0,
   } = {}) {
     const { ContentItem } = this.context.dataSources;
@@ -86,19 +87,20 @@ class dataSource extends ActionAlgorithm.dataSource {
       channelIds.map(async (channel) =>
         (await ContentItem.byContentChannelId(channel, category, false))
           .sort([{ field: 'StartDateTime', direction: 'asc' }])
+          .andFilter(
+            `((StartDateTime gt datetime'${formatISO(
+              previousSunday(startOfToday())
+            )}') and (StartDateTime lt datetime'${formatISO(
+              nextMonday(startOfToday())
+            )}'))`
+          )
           .top(limit)
           .skip(skip)
           .get()
       )
     )).flat();
 
-    const itemsByDate = items.filter(
-      (key) =>
-        isAfter(parseISO(key.startDateTime), previousSunday(startOfToday())) &&
-        isBefore(parseISO(key.startDateTime), nextMonday(startOfToday()))
-    );
-
-    return itemsByDate.map((item, i) => ({
+    return items.map((item, i) => ({
       id: `${item.id}${i}`,
       title: item.title,
       subtitle: format(new Date(item.startDateTime), 'E, MMM d') || '',
