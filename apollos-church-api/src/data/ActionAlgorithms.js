@@ -1,5 +1,13 @@
 import { ActionAlgorithm } from '@apollosproject/data-connector-rock';
-import { format, isThisWeek } from 'date-fns';
+import {
+  format,
+  isAfter,
+  isBefore,
+  parseISO,
+  previousSunday,
+  nextMonday,
+  startOfToday,
+} from 'date-fns';
 
 class dataSource extends ActionAlgorithm.dataSource {
   ACTION_ALGORITHMS = {
@@ -68,7 +76,7 @@ class dataSource extends ActionAlgorithm.dataSource {
   async weeklyScriptureFeedAlgorithm({
     category = '',
     channelIds = [],
-    limit = 5,
+    limit = 50,
     skip = 0,
   } = {}) {
     const { ContentItem } = this.context.dataSources;
@@ -76,15 +84,17 @@ class dataSource extends ActionAlgorithm.dataSource {
     const items = (await Promise.all(
       channelIds.map(async (channel) =>
         (await ContentItem.byContentChannelId(channel, category, false))
+          .sort([{ field: 'StartDateTime', direction: 'asc' }])
           .top(limit)
           .skip(skip)
-          .sort([{ field: 'StartDateTime', direction: 'asc' }])
           .get()
       )
     )).flat();
 
-    const itemsByDate = items.filter((key) =>
-      isThisWeek(new Date(key.startDateTime), 1)
+    const itemsByDate = items.filter(
+      (key) =>
+        isAfter(parseISO(key.startDateTime), previousSunday(startOfToday())) &&
+        isBefore(parseISO(key.startDateTime), nextMonday(startOfToday()))
     );
 
     return itemsByDate.map((item, i) => ({

@@ -194,7 +194,6 @@ TABS:
       algorithms:
         - type: WEEKLY_SCRIPTURE_FEED # This pulls the 5 Daily Scriptures for this week
           arguments:
-            limit: 5
             channelIds:
               - 32
       type: ActionList
