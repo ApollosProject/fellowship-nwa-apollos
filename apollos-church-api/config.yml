@@ -204,6 +204,13 @@ TABS:
           arguments:
             limit: 1
             channelIds:
+              - 41
+      type: VerticalCardList
+    - algorithms:
+        - type: CONTENT_FEED
+          arguments:
+            limit: 1
+            channelIds:
               - 37
       type: VerticalCardList
     - subtitle: Featured
