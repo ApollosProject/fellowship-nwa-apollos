@@ -301,12 +301,11 @@ TABS:
               - 12
       type: HorizontalCardList
       primaryAction:
-        action: OPEN_CHANNEL
+        action: OPEN_URL
         title: 'View all'
         relatedNode:
-          __typename: ContentChannel
-          id: 12
-          name: Recent Series
+          __typename: Url
+          url: 'https://fellowshipnwa.org/services'
 
     - subtitle: Podcasts # Missing Content Channel in Rock
       algorithms:
