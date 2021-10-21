@@ -2,9 +2,6 @@ import { ActionAlgorithm } from '@apollosproject/data-connector-rock';
 import {
   format,
   formatISO,
-  isAfter,
-  isBefore,
-  parseISO,
   previousSunday,
   nextMonday,
   startOfToday,
