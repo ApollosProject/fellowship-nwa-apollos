@@ -117,27 +117,10 @@ const ActionTable = () => (
           </Touchable>
           <Divider />
           <Touchable
-            onPress={() => openUrl('https://www.fellowshipnwa.org/home')}
+            onPress={() => openUrl('https://www.fellowshipnwa.org/give')}
           >
             <Cell>
-              <CellText>Fellowship Website</CellText>
-              <CellIcon name="arrow-next" />
-            </Cell>
-          </Touchable>
-          <Divider />
-          <Touchable
-            onPress={() => openUrl('https://www.fellowshipnwa.org/Home')}
-          >
-            <Cell>
-              <CellText>Give Feedback</CellText>
-              <CellIcon name="arrow-next" />
-            </Cell>
-          </Touchable>
-          <Touchable
-            onPress={() => openUrl('https://www.fellowshipnwa.org/Home')}
-          >
-            <Cell>
-              <CellText>Report an Issue</CellText>
+              <CellText>Give</CellText>
               <CellIcon name="arrow-next" />
             </Cell>
           </Touchable>
