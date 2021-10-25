@@ -34,7 +34,7 @@ const stretchyStyle = {
 };
 
 const Image = withTheme(({ theme }) => ({
-  overlayColor: theme.colors.primary,
+  overlayColor: theme.colors.paper,
   overlayType: 'gradient-bottom',
   style: stretchyStyle,
 }))(GradientOverlayImage);
