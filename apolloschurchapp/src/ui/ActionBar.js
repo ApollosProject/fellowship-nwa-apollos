@@ -16,7 +16,7 @@ const Toolbar = () => (
             openUrl('https://www.fellowshipnwa.org/SmallGroupForm')
           }
           icon="users-three"
-          label="Groups"
+          label="Join Group"
         />
         <ActionBarItem
           onPress={() => openUrl('https://www.fellowshipnwa.org/serve')}
