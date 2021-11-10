@@ -237,24 +237,13 @@ class dataSource extends ContentItem.dataSource {
           async ({ attributeValues: { linkName, linkUrl, file } }) => {
             let url = '';
 
-            function isValidHttpUrl(string) {
-              let checkUrl;
-
-              try {
-                checkUrl = new URL(string);
-              } catch (_) {
-                return false;
-              }
-
-              return (
-                checkUrl.protocol === 'http:' || checkUrl.protocol === 'https:'
+            if (linkUrl.value) {
+              url = new URL(
+                linkUrl.value,
+                !linkUrl.value.startsWith('http')
+                  ? ApollosConfig.ROCK.URL
+                  : undefined
               );
-            }
-
-            if (isValidHttpUrl(linkUrl.value)) {
-              url = new URL(linkUrl.value);
-            } else if (linkUrl.value) {
-              url = new URL(linkUrl.value, ApollosConfig.ROCK.URL);
             } else if (file.value) {
               const blob = await BinaryFiles.request()
                 .filter(`Guid eq guid'${file.value}'`)
