@@ -1,6 +1,9 @@
 import { gql } from 'apollo-server';
+import { get } from 'lodash';
+import natural from 'natural';
 import { ContentItem } from '@apollosproject/data-connector-rock';
 import ApollosConfig from '@apollosproject/config';
+import sanitizeHtml from 'sanitize-html';
 
 const schema = gql`
   ${ContentItem.schema}
@@ -38,7 +41,30 @@ const resolver = {
 class dataSource extends ContentItem.dataSource {
   baseItemByChannelCursor = this.byContentChannelId;
 
-  _coreCreateSummary = this.createSummary;
+  _coreCreateSummary = ({ content, attributeValues }) => {
+    const summary = get(attributeValues, 'summary.value', '');
+    if (summary !== '')
+      return sanitizeHtml(summary, {
+        allowedTags: [],
+        allowedAttributes: {},
+      });
+    if (!content || typeof content !== 'string') return '';
+    // Protect against 0 length sentences (tokenizer will throw an error)
+    if (content.split(' ').length === 1) return '';
+
+    const tokenizer = new natural.SentenceTokenizer();
+    const tokens = tokenizer.tokenize(
+      sanitizeHtml(content, {
+        allowedTags: ['h1', 'h2', 'h3', 'h4', 'h5', 'h6'],
+        allowedAttributes: [],
+        exclusiveFilter: (frame) => frame.tag.match(/^(h1|h2|h3|h4|h5|h6)$/),
+      })
+    );
+    // protects from starting with up to a three digit number and period
+    return tokens.length > 1 && tokens[0].length < 5
+      ? `${tokens[0]} ${tokens[1]}`
+      : tokens[0];
+  };
 
   createSummary = ({ attributeValues, ...other }) => {
     if (attributeValues?.description?.value)

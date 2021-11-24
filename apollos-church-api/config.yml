@@ -182,37 +182,45 @@ TABS:
       isCard: false
       type: PrayerList
       subtitle: Daily Prayer
-    - subtitle: Grow Together # This pulls the Daily Scripture for today
-      algorithms:
+    - algorithms: # Advent Devos Parent
       - type: CONTENT_FEED
         arguments:
-          limit: 1
           channelIds:
-            - 32
-          subtitle: Today's Reading
-      type: VerticalCardList   
-    - subtitle: Weekly Readings
-      algorithms:
-        - type: WEEKLY_SCRIPTURE_FEED # This pulls the 5 Daily Scriptures for this week
-          arguments:
-            channelIds:
-              - 32
-      type: ActionList
-      isCard: false # This doesn't work for some reason?
-    - algorithms:
-        - type: CONTENT_FEED
-          arguments:
-            limit: 1
-            channelIds:
-              - 41
+            - 44
+          limit: 1
+      subtitle: Advent Devotionals
       type: VerticalCardList
-    - algorithms:
-        - type: CONTENT_FEED
-          arguments:
-            limit: 1
-            channelIds:
-              - 37
-      type: VerticalCardList
+    # - subtitle: Grow Together # This pulls the Daily Scripture for today
+    #   algorithms:
+    #   - type: CONTENT_FEED
+    #     arguments:
+    #       limit: 1
+    #       channelIds:
+    #         - 32
+    #       subtitle: Today's Reading
+    #   type: VerticalCardList
+    # - subtitle: Weekly Readings # This pulls the 5 Daily Scriptures for this week
+    #   algorithms:
+    #     - type: WEEKLY_SCRIPTURE_FEED
+    #       arguments:
+    #         channelIds:
+    #           - 32
+    #   type: ActionList
+    #   isCard: false
+    # - algorithms: # Weekly Discussion Guide
+    #     - type: CONTENT_FEED
+    #       arguments:
+    #         limit: 1
+    #         channelIds:
+    #           - 41
+    #   type: VerticalCardList
+    # - algorithms: # Fight For Godliness, Digital Book
+    #     - type: CONTENT_FEED
+    #       arguments:
+    #         limit: 1
+    #         channelIds:
+    #           - 37
+    #   type: VerticalCardList
     - subtitle: Featured
       algorithms:
         - type: CONTENT_FEED
@@ -298,8 +306,7 @@ TABS:
           name: Recent Teachings
           id: 10
 
-    - subtitle: Recent Series
-    # Missing Content Channel in Rock
+    - subtitle: Recent Series # Missing Content Channel in Rock
       algorithms:
         - type: CONTENT_FEED
           arguments:
