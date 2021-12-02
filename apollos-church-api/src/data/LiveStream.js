@@ -13,16 +13,11 @@ import * as LiveStream from '@apollosproject/data-connector-church-online';
 const { schema, resolver } = LiveStream;
 
 class dataSource extends LiveStream.dataSource {
-  async getLiveStreams() {
-    const { ContentItem } = this.context.dataSources;
-    // This logic is a little funky right now.
-    // The follow method looks at the sermon feed and the `getLiveStream` on this module
-    // If we have data in the sermon feed, and the `getLiveStream.isLive` is true
-    // this returns an array of livestreams
-    const liveItems = await ContentItem.getActiveLiveStreamContent();
+  getCampusMap = () => {
     const today = zonedTimeToUtc(startOfToday(), 'America/Chicago');
     const sunday = isSunday(today) ? today : nextSunday(today);
-    const campusMap = {
+
+    return {
       'Fellowship Fayetteville': {
         times: [
           zonedTimeToUtc(
@@ -63,9 +58,32 @@ class dataSource extends LiveStream.dataSource {
         url: 'https://resi.media/fe-llo-sp/Manifest.m3u8',
       },
     };
+  };
+
+  async getLiveStream() {
+    const { id } = await this.context.dataSources.Auth.getCurrentPerson();
+    const campus = await this.context.dataSources.Campus.getForPerson({ id });
+    const { times, url } = this.getCampusMap()[campus.name];
+
+    return {
+      isLive: isPast(times[0]) && isFuture(times[1]),
+      eventStartTime: null,
+      media: { sources: [{ uri: url }] },
+      webViewUrl: null,
+    };
+  }
+
+  async getLiveStreams() {
+    const { ContentItem } = this.context.dataSources;
+    // This logic is a little funky right now.
+    // The follow method looks at the sermon feed and the `getLiveStream` on this module
+    // If we have data in the sermon feed, and the `getLiveStream.isLive` is true
+    // this returns an array of livestreams
+    const liveItems = await ContentItem.getActiveLiveStreamContent();
+
     return Promise.all(
       liveItems.map(async (item) => {
-        const { times, url } = campusMap[
+        const { times, url } = this.getCampusMap()[
           item.attributeValues.congregation.valueFormatted
         ];
         return {
