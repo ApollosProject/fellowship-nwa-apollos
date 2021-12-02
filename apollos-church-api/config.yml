@@ -151,7 +151,7 @@ ROCK_MAPPINGS:
       # When resolving "ContentSeriesContentItem" look in rock for a "ContentChannelItem"
       EntityType: ContentChannelItem
       # Used to define the subset of content channels types that use this specific type.
-      ContentChannelId: [12, 37]
+      ContentChannelId: [12, 37, 44]
     DevotionalContentItem:
       EntityType: ContentChannelItem
       ContentChannelId: [32, 38]
