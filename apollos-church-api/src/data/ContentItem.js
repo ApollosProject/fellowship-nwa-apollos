@@ -372,9 +372,10 @@ class dataSource extends ContentItem.dataSource {
   };
 
   getActiveLiveStreamContent = async () => {
-    /*     const { LiveStream } = this.context.dataSources;
+    const { LiveStream } = this.context.dataSources;
     const { isLive } = await LiveStream.getLiveStream();
-    if (!isLive) return []; */
+
+    if (!isLive) return [];
 
     const serviceAttributeValues = await this.request('AttributeValues')
       .filter(`AttributeId eq 8702 and Value eq 'adults'`)
