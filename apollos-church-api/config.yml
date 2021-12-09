@@ -204,7 +204,7 @@ TABS:
         relatedNode:
           __typename: ContentChannel
           id: 28
-          name: Advent Devotionals
+          name: Devotionals
     # - subtitle: Grow Together # This pulls the Daily Scripture for today
     #   algorithms:
     #   - type: CONTENT_FEED
