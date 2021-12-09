@@ -190,14 +190,14 @@ TABS:
           limit: 1
       subtitle: Advent Devotionals
       type: VerticalCardList
-    - algorithms: # Advent Devos Herolist
+    - algorithms: # Advent Devos HeroList
       - type: CONTENT_FEED
         arguments:
           channelIds:
             - 28
           limit: 3
       subtitle: Latest Devotionals
-      type: HorizontalCardList
+      type: HeroCardList
       primaryAction:
         action: OPEN_CHANNEL
         title: 'View All'
