@@ -184,6 +184,12 @@ TABS:
       isCard: false
       type: PrayerList
       subtitle: Daily Prayer
+    - algorithms: # Birth of Christ in Scripture
+      - type: SINGLE_CONTENT_ITEM_BY_ID
+        arguments:
+          itemRockId:
+            - 3877
+      type: VerticalCardList
     - algorithms: # Advent Devos Parent
       - type: CONTENT_FEED
         arguments:

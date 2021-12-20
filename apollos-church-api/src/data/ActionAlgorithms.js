@@ -11,6 +11,7 @@ class dataSource extends ActionAlgorithm.dataSource {
   ACTION_ALGORITHMS = {
     ...this.ACTION_ALGORITHMS,
     PRIORITY_CONTENT_FEED: this.priorityContentFeedAlgorithm.bind(this),
+    SINGLE_CONTENT_ITEM_BY_ID: this.singleContentItemByIdAlgorithm.bind(this),
     WEEKLY_SCRIPTURE_FEED: this.weeklyScriptureFeedAlgorithm.bind(this),
   };
 
@@ -41,6 +42,25 @@ class dataSource extends ActionAlgorithm.dataSource {
       action: 'READ_CONTENT',
       summary: ContentItem.createSummary(item),
     }));
+  }
+
+  async singleContentItemByIdAlgorithm({
+    subtitle = '',
+    itemRockId = '',
+  } = {}) {
+    const { ContentItem } = this.context.dataSources;
+
+    const item = await ContentItem.getFromId(`${itemRockId}`);
+
+    return {
+      id: `${item.id}`,
+      title: item.title,
+      subtitle: item.contentChannel?.name || subtitle,
+      relatedNode: { ...item, __type: ContentItem.resolveType(item) },
+      image: ContentItem.getCoverImage(item),
+      action: 'READ_CONTENT',
+      summary: ContentItem.createSummary(item),
+    };
   }
 
   async priorityContentFeedAlgorithm({
