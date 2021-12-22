@@ -1,7 +1,5 @@
 import querystring from 'querystring';
-import React from 'react';
 import PropTypes from 'prop-types';
-import ApollosConfig from '@apollosproject/config';
 import { NavigationService } from '@apollosproject/ui-kit';
 import { AuthProvider } from '@apollosproject/ui-auth';
 import { AnalyticsProvider } from '@apollosproject/ui-analytics';
@@ -16,6 +14,7 @@ import RNAmplitude from 'react-native-amplitude-analytics';
 
 import ClientProvider, { client } from './client';
 
+import ApollosConfig from '@apollosproject/config';
 const amplitude = new RNAmplitude(ApollosConfig.AMPLITUDE_API_KEY);
 
 const AppProviders = ({ children }) => (
@@ -26,8 +25,9 @@ const AppProviders = ({ children }) => (
       handleExternalLink={(url) => {
         const path = url.split('app-link/')[1];
         const [route, location] = path.split('/');
-        if (route === 'content')
+        if (route === 'content') {
           NavigationService.navigate('ContentSingle', { itemId: location });
+        }
         if (route === 'nav') {
           const [component, params] = location.split('?');
           const args = querystring.parse(params);

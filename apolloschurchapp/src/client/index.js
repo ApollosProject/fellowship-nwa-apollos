@@ -1,29 +1,15 @@
-import React, { useEffect } from 'react';
+import { useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { ApolloProvider, ApolloClient, ApolloLink, gql } from '@apollo/client';
-import { onError } from '@apollo/client/link/error';
-import AsyncStorage from '@react-native-community/async-storage';
 import { getVersion, getApplicationName } from 'react-native-device-info';
 
-import { authLink } from '@apollosproject/ui-auth';
+import { authLink, buildErrorLink } from '@apollosproject/ui-auth';
 import { updatePushId } from '@apollosproject/ui-notifications';
 
 import { NavigationService } from '@apollosproject/ui-kit';
 
 import httpLink from './httpLink';
 import cache, { ensureCacheHydration } from './cache';
-
-const buildErrorLink = (onAuthError) =>
-  onError(({ graphQLErrors }) => {
-    if (graphQLErrors)
-      graphQLErrors.map(async ({ extensions: { code } }) => {
-        // wipe out all data and go somewhere
-        if (code === 'UNAUTHENTICATED') {
-          await AsyncStorage.removeItem('authToken');
-          onAuthError();
-        }
-      });
-  });
 
 const wipeData = () =>
   cache.writeQuery({

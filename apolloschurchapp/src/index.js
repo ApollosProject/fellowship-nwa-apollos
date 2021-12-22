@@ -1,6 +1,3 @@
-/* eslint-disable react/jsx-handler-names */
-
-import React from 'react';
 import { StatusBar, useColorScheme } from 'react-native';
 import {
   NavigationContainer,
@@ -29,13 +26,12 @@ import {
   ContentSingleConnected,
   ContentFeedConnected,
   SearchScreenConnected,
+  UserSettingsConnected,
 } from '@apollosproject/ui-connected';
 import Providers from './Providers';
 import MinistryEventList from './ui/MinistryEventList';
 import Tabs from './tabs';
 import customTheme, { customIcons } from './theme';
-
-import UserSettingsNavigator from './user-settings';
 
 import Landing from './onboarding/Landing';
 
@@ -164,7 +160,7 @@ const App = () => {
               <Screen name="Search" component={SearchScreenConnected} />
               <Screen
                 name="UserSettingsNavigator"
-                component={UserSettingsNavigator}
+                component={UserSettingsConnected}
               />
             </Navigator>
           </Providers>

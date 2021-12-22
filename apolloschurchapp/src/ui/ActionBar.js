@@ -1,4 +1,3 @@
-import React from 'react';
 import { ActionBar, ActionBarItem } from '@apollosproject/ui-kit';
 import { RockAuthedWebBrowser } from '@apollosproject/ui-connected';
 
