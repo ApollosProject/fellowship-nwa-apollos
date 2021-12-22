@@ -29,7 +29,7 @@
     "@apollosproject/data-connector-passes": "2.39.1-canary.1",
     "@apollosproject/data-connector-postgres": "2.41.1-canary.3",
     "@apollosproject/data-connector-redis-cache": "^2.33.4",
-    "@apollosproject/data-connector-rock": "2.41.1-canary.3",
+    "@apollosproject/data-connector-rock": "^2.41.1-canary.5",
     "@apollosproject/data-connector-twilio": "^2.33.4",
     "@apollosproject/data-schema": "2.41.1-canary.3",
     "@apollosproject/rock-apollo-data-source": "^2.33.4",

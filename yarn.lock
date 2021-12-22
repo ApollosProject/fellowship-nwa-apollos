@@ -272,10 +272,10 @@
     apollo-datasource "^0.2.0"
     ioredis "4.14.1"
 
-"@apollosproject/data-connector-rock@2.41.1-canary.3":
-  version "2.41.1-canary.3"
-  resolved "https://registry.yarnpkg.com/@apollosproject/data-connector-rock/-/data-connector-rock-2.41.1-canary.3.tgz#382b68e888c7d7bea3d3131ac4f9a70b3180c196"
-  integrity sha512-KJsxONAzWIUm/sdHQ65lWWZLzWtlzz2XLfHgqk+vYBdVfPCMFsZtEqwenDZ+oIOSeVnB1oQHMlg4Viv+8+ih8w==
+"@apollosproject/data-connector-rock@^2.41.1-canary.5":
+  version "2.41.1-canary.5"
+  resolved "https://registry.yarnpkg.com/@apollosproject/data-connector-rock/-/data-connector-rock-2.41.1-canary.5.tgz#5be73006731c444c844cfe7c2e4ca494314b4878"
+  integrity sha512-8r+/1n0Gunu1mXzRJTztJYqeCrww32qzzOpEgRQhiwwLsajUHJ5hi++wLRkcXM670Bg8jmZ5bojpDIH0JyHtCQ==
   dependencies:
     awesome-phonenumber "^2.4.2"
     form-data "^4.0.0"
@@ -406,10 +406,10 @@
     entities "^1.1.2"
     htmlparser2 "3.9.2"
 
-"@apollosproject/ui-kit@^2.41.1-canary.0":
-  version "2.41.1-canary.0"
-  resolved "https://registry.yarnpkg.com/@apollosproject/ui-kit/-/ui-kit-2.41.1-canary.0.tgz#bcc819e6f4df4b99d4a5ed5ef01082881419477f"
-  integrity sha512-AaKttLQbggB9YDgPDHf1YHtLyo3s04Rx5k97VePuwfvCSyJtXIKtLiOmnrxK0Sh1WePtg3JqJf3kMjJFrltImg==
+"@apollosproject/ui-kit@^2.41.1-canary.4":
+  version "2.41.1-canary.4"
+  resolved "https://registry.yarnpkg.com/@apollosproject/ui-kit/-/ui-kit-2.41.1-canary.4.tgz#7f54c38832aa8ac0cf868fa0741e6978855962c7"
+  integrity sha512-U7FAeIrnGeqI0IShDs91Dcbn9jIiE8ZG+clY5glqoHXtwASNAXx4UZdW9+a4lzVYTW+V7DRqMsHYWUDaRyM0PA==
   dependencies:
     "@react-native-community/blur" "^3.6.0"
     "@react-native-picker/picker" "^1.9.4"
