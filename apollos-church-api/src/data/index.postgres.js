@@ -62,7 +62,7 @@ import * as RockActionAlgorithm from './ActionAlgorithms';
 import * as RockContentItem from './ContentItem';
 import * as ContentChannel from './ContentChannel';
 import * as Event from './Event';
-import * as PrayerRequest from './PrayerRequest';
+import * as RockPrayerRequest from './PrayerRequest';
 import * as Matrix from './Matrix';
 import * as RockPerson from './RockPerson';
 import * as RockCampus from './Campus';
@@ -102,7 +102,6 @@ const rockContentModules = {
   Feature: RockFeature,
   ContentItem: RockContentItem,
   ContentChannel,
-  PrayerRequest,
   PostgresCampus: {
     // essentially everything but the resolvers
     dataSource: Campus.dataSource,
@@ -111,7 +110,7 @@ const rockContentModules = {
   },
   Campus: RockCampus,
   RockDefaultCampusOverride,
-  // PrayerRequest: RockPrayerRequest,
+  PrayerRequest: RockPrayerRequest,
 };
 
 const data = {
