@@ -304,10 +304,24 @@
     apollo-datasource "^0.2.0"
     twilio "^3.28.0"
 
-"@apollosproject/data-schema@2.41.1-canary.3", "@apollosproject/data-schema@^2.41.1-canary.3+f225756d":
+"@apollosproject/data-schema@^2.41.0":
+  version "2.41.0"
+  resolved "https://registry.yarnpkg.com/@apollosproject/data-schema/-/data-schema-2.41.0.tgz#1d2519ce221814acd40fd01f591285b7c362a10f"
+  integrity sha512-1Q9uoEbmd2Ek8XWyOuXKbE9eCgzMXktrI6oU9524s3aWbRMo6J/5OqLcpmem+xhjxGbBdfQx83upPXP06fJW0Q==
+  dependencies:
+    "@apollo/client" "3.3.20"
+
+"@apollosproject/data-schema@^2.41.1-canary.3+f225756d":
   version "2.41.1-canary.3"
   resolved "https://registry.yarnpkg.com/@apollosproject/data-schema/-/data-schema-2.41.1-canary.3.tgz#2373335b13e9cf5521710df3aafe0ef9d1d2016e"
   integrity sha512-QhYES8iKEB8qk2d4Ahu4AdXOtanaamgPLTn9LUCNCk0xIWtAWQWYCd9pm3zrmhAo+P3viXCAZiAfmFXSrmQv8A==
+  dependencies:
+    "@apollo/client" "3.3.20"
+
+"@apollosproject/data-schema@^2.41.1-canary.5":
+  version "2.41.1-canary.5"
+  resolved "https://registry.yarnpkg.com/@apollosproject/data-schema/-/data-schema-2.41.1-canary.5.tgz#400027c47ca76ad836aee0f935f4d029438f3a8b"
+  integrity sha512-o6iyZifYCAbV1iYUMPPagE6QeHQvOniIXC/5vB3lHVevrkq+jtTGtMg26zwT+7lmioUuIk09i4PyR4YiJ0RsoA==
   dependencies:
     "@apollo/client" "3.3.20"
 
@@ -351,6 +365,12 @@
     graphql-upload "^12.0.0"
     lodash "^4.17.11"
 
+"@apollosproject/server-core@^2.41.0":
+  version "2.41.0"
+  resolved "https://registry.yarnpkg.com/@apollosproject/server-core/-/server-core-2.41.0.tgz#e06f2fd9dc661f50b19bb4c3145c44401233647c"
+  integrity sha512-Sqy9F7uACtv62BYqUZMcO8HPoE9795xtufIiITa57pXLaE45iqChBOKnhEykxVZny8loBa8Cj/fdg/F2bAzBtQ==
+  dependencies:
+    "@apollo/client" "3.3.20"
     "@apollosproject/data-schema" "^2.41.0"
     apollo-server-caching "^0.4.0"
     bull "^3.11.0"

@@ -31,7 +31,7 @@
     "@apollosproject/data-connector-redis-cache": "^2.41.0",
     "@apollosproject/data-connector-rock": "^2.41.1-canary.5",
     "@apollosproject/data-connector-twilio": "^2.41.0",
-    "@apollosproject/data-schema": "2.41.1-canary.3",
+    "@apollosproject/data-schema": "^2.41.1-canary.5",
     "@apollosproject/rock-apollo-data-source": "^2.41.0",
     "@apollosproject/server-core": "2.41.1-canary.3",
     "apollo-server": "^2.24.1",
