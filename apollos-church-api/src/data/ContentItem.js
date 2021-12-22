@@ -298,10 +298,13 @@ class dataSource extends ContentItem.dataSource {
     }
 
     // sign up button
-    const signupURL = `${process.env.ROCK_URL}${
-      item.attributeValues.registrationLinkUrl?.value
-    }`;
+    let signupURL = '';
+
     if (item.attributeValues.registrationLinkUrl?.value) {
+      signupURL = `${process.env.ROCK_URL}${
+        item.attributeValues.registrationLinkUrl?.value
+      }`;
+
       features.push(
         Feature.createButtonFeature({
           id: item.attributeValues.registrationLinkUrl.id,
@@ -311,7 +314,25 @@ class dataSource extends ContentItem.dataSource {
               url: signupURL,
             },
             action: 'OPEN_AUTHENTICATED_URL',
-            title: 'Sign Up',
+            title: 'Register',
+          }),
+        })
+      );
+    } else if (item.attributeValues.calendarLinkUrl?.value) {
+      signupURL = `${process.env.ROCK_URL}${
+        item.attributeValues.calendarLinkUrl?.value
+      }`;
+
+      features.push(
+        Feature.createButtonFeature({
+          id: item.attributeValues.calendarLinkUrl.id,
+          action: Feature.attachActionIds({
+            relatedNode: {
+              __typename: 'Url',
+              url: signupURL,
+            },
+            action: 'OPEN_AUTHENTICATED_URL',
+            title: 'Learn More',
           }),
         })
       );
