@@ -33,6 +33,7 @@ import {
   // ContentChannel,
   Feature as RockFeature,
   // ActionAlgorithm as RockActionAlgorithm,
+  // PrayerRequest as RockPrayerRequest,
 } from '@apollosproject/data-connector-rock';
 
 import {
@@ -75,6 +76,7 @@ import {
   OneSignal,
   PostgresDefaultCampusOverride,
   RockDefaultCampusOverride,
+  // PrayerRequest,
 } from './rockWithPostgres';
 
 const postgresContentModules = {
@@ -109,6 +111,7 @@ const rockContentModules = {
   },
   Campus: RockCampus,
   RockDefaultCampusOverride,
+  // PrayerRequest: RockPrayerRequest,
 };
 
 const data = {
