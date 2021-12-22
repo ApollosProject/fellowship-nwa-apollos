@@ -186,6 +186,18 @@ const WatchTab = createFeatureFeedTab({
   TabComponent: CampusTabComponent,
 });
 
+const GiveTab = createFeatureFeedTab({
+  options: {
+    headerHideShadow: true,
+    headerLeft: FellowshipIcon,
+    headerRight: HeaderRight,
+    headerCenter: BlankHeaderCenter,
+    headerLargeTitle: false,
+  },
+  tabName: 'Give',
+  feedName: 'GIVE',
+});
+
 const ConnectTab = createFeatureFeedTab({
   options: {
     headerLeft: FellowshipIcon,
@@ -240,6 +252,11 @@ const TabNavigator = () => {
         name="Events"
         component={EventsTab}
         options={{ tabBarIcon: tabBarIcon('calendar') }}
+      />
+      <Screen
+        name="Give"
+        component={GiveTab}
+        options={{ tabBarIcon: tabBarIcon('currency-circle-dollar') }}
       />
       <Screen
         name="Connect"

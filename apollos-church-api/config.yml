@@ -55,6 +55,8 @@ BIBLE_API:
   DEFAULT_VERSION: ESV
 CLOUDINARY:
   URL: ${CLOUDINARY_URL}
+SIMPLEDONATION:
+  KEY: ${SIMPLE_DONATION_KEY}
 SUGGESTED_FOLLOWS:
   -
     id: dbf57ba9-2023-4668-859a-52f2be1e0386 # Nick Roland
@@ -369,6 +371,10 @@ TABS:
           __typename: ContentChannel
           id: 35
           name: Worship Music
+
+  GIVE:
+    - type: WebView
+      url: ${ROOT_URL}/simpledonation
 
   # PRAY: # NOT USED
   #   - algorithms: [DAILY_PRAYER]
