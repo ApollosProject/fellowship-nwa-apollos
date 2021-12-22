@@ -51,9 +51,9 @@
     "umzug": "^3.0.0-beta.15"
   },
   "devDependencies": {
-    "@apollosproject/apollo-server-env-mock": "^2.33.3",
-    "@apollosproject/babel-preset-apollos": "^2.33.3",
-    "@apollosproject/eslint-config": "^2.33.3",
+    "@apollosproject/apollo-server-env-mock": "^2.41.0",
+    "@apollosproject/babel-preset-apollos": "^2.41.0",
+    "@apollosproject/eslint-config": "^2.41.0",
     "@babel/cli": "^7.4.5",
     "@babel/core": "^7.4.5",
     "@babel/node": "^7.7.4",
