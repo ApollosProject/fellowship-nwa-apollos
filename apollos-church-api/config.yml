@@ -186,66 +186,66 @@ TABS:
       isCard: false
       type: PrayerList
       subtitle: Daily Prayer
-    - algorithms: # Birth of Christ in Scripture
-      - type: SINGLE_CONTENT_ITEM_BY_ID
-        arguments:
-          itemRockId:
-            - 3877
-      type: VerticalCardList
-    - algorithms: # Advent Devos Parent
-      - type: CONTENT_FEED
-        arguments:
-          channelIds:
-            - 44
-          limit: 1
-      subtitle: Advent Devotionals
-      type: VerticalCardList
-    - algorithms: # Advent Devos HeroList
-      - type: CONTENT_FEED
-        arguments:
-          channelIds:
-            - 28
-          limit: 3
-      subtitle: Latest Devotionals
-      type: HeroCardList
-      primaryAction:
-        action: OPEN_CHANNEL
-        title: 'View All'
-        relatedNode:
-          __typename: ContentChannel
-          id: 28
-          name: Devotionals
-    # - subtitle: Grow Together # This pulls the Daily Scripture for today
-    #   algorithms:
+    # - algorithms: # Birth of Christ in Scripture
+    #   - type: SINGLE_CONTENT_ITEM_BY_ID
+    #     arguments:
+    #       itemRockId:
+    #         - 3877
+    #   type: VerticalCardList
+    # - algorithms: # Advent Devos Parent
     #   - type: CONTENT_FEED
     #     arguments:
-    #       limit: 1
     #       channelIds:
-    #         - 32
-    #       subtitle: Today's Reading
+    #         - 44
+    #       limit: 1
+    #   subtitle: Advent Devotionals
     #   type: VerticalCardList
-    # - subtitle: Weekly Readings # This pulls the 5 Daily Scriptures for this week
-    #   algorithms:
-    #     - type: WEEKLY_SCRIPTURE_FEED
-    #       arguments:
-    #         channelIds:
-    #           - 32
-    #   type: ActionList
-    #   isCard: false
-    # - algorithms: # Weekly Discussion Guide
-    #     - type: CONTENT_FEED
-    #       arguments:
-    #         limit: 1
-    #         channelIds:
-    #           - 41
-    #   type: VerticalCardList
-    # - algorithms: # Fight For Godliness, Digital Book
-    #     - type: CONTENT_FEED
-    #       arguments:
-    #         limit: 1
-    #         channelIds:
-    #           - 37
-    #   type: VerticalCardList
+    # - algorithms: # Advent Devos HeroList
+    #   - type: CONTENT_FEED
+    #     arguments:
+    #       channelIds:
+    #         - 28
+    #       limit: 3
+    #   subtitle: Latest Devotionals
+    #   type: HeroCardList
+    #   primaryAction:
+    #     action: OPEN_CHANNEL
+    #     title: 'View All'
+    #     relatedNode:
+    #       __typename: ContentChannel
+    #       id: 28
+    #       name: Devotionals
+    - subtitle: Grow Together # This pulls the Daily Scripture for today
+      algorithms:
+      - type: CONTENT_FEED
+        arguments:
+          limit: 1
+          channelIds:
+            - 32
+          subtitle: Today's Reading
+      type: VerticalCardList
+    - subtitle: Weekly Readings # This pulls the 5 Daily Scriptures for this week
+      algorithms:
+        - type: WEEKLY_SCRIPTURE_FEED
+          arguments:
+            channelIds:
+              - 32
+      type: ActionList
+      isCard: false
+    - algorithms: # Weekly Discussion Guide
+        - type: CONTENT_FEED
+          arguments:
+            limit: 1
+            channelIds:
+              - 41
+      type: VerticalCardList
+    - algorithms: # Fight For Godliness, Digital Book
+        - type: CONTENT_FEED
+          arguments:
+            limit: 1
+            channelIds:
+              - 37
+      type: VerticalCardList
     - subtitle: Featured
       algorithms:
         - type: CONTENT_FEED
