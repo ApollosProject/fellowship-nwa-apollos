@@ -9,7 +9,6 @@ import { BaseRedisCache } from 'apollo-server-cache-redis';
 import Redis from 'ioredis';
 import {
   setupUniversalLinks,
-  useSimpleDonationRoute,
 } from '@apollosproject/server-core';
 import { createMigrationRunner } from '@apollosproject/data-connector-postgres';
 import { BugsnagPlugin } from '@apollosproject/bugsnag';
@@ -99,6 +98,32 @@ app.get('/forgot-password', (req, res) => {
 applyServerMiddleware({ app, dataSources, context });
 setupJobs({ app, dataSources, context });
 // Comment out if you don't want the API serving apple-app-site-association or assetlinks manifests.
+
+function useSimpleDonationRoute() {
+  // Give Screen
+  app.get('/simpledonation', (req, res) => {
+    console.log(req)
+    res.send(`
+            <!DOCTYPE html>
+            <html>
+                <head>
+                    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                </head>
+                <body>
+                    <script async src="https://merlin.simpledonation.com/js/installScript.js?cssFile=https://${req?.get('host')}/giving.css"></script>
+                    <a href="#" class="open-merlin" style="color:white;" data-merlin-key="${
+                      ApollosConfig?.SIMPLEDONATION?.KEY
+                    }" data-merlin-autoload="true">Give Now</a>
+                </body>
+            </html>
+            `);
+  });
+  app.get('/giving.css', (req, res) => {
+    res.sendFile(`${__dirname}/giving.css`);
+  });
+}
+
+
 setupUniversalLinks({ app });
 useSimpleDonationRoute({ app });
 
