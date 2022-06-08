@@ -102,7 +102,6 @@ setupJobs({ app, dataSources, context });
 function useSimpleDonationRoute() {
   // Give Screen
   app.get('/simpledonation', (req, res) => {
-    console.log(req)
     res.send(`
             <!DOCTYPE html>
             <html>
