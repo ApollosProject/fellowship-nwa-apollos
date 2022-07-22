@@ -88,6 +88,8 @@
     "react-native-amplitude-analytics": "^0.2.12",
     "react-native-config": "^0.11.7",
     "react-native-device-info": "^4.0.1",
+    "react-native-flipper": "^0.138.0",
+    "react-native-flipper-apollo-devtools": "^0.0.2",
     "react-native-geolocation-service": "^5.1.1",
     "react-native-gesture-handler": "^1.10.3",
     "react-native-image-picker": "^3.1.4",

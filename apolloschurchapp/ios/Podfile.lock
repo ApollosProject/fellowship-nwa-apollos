@@ -307,6 +307,8 @@ PODS:
     - React
   - react-native-config (0.11.7):
     - React
+  - react-native-flipper (0.138.0):
+    - React-Core
   - react-native-geolocation (2.0.2):
     - React
   - react-native-geolocation-service (5.1.1):
@@ -508,6 +510,7 @@ DEPENDENCIES:
   - react-native-amplitude-analytics (from `../node_modules/react-native-amplitude-analytics`)
   - "react-native-apollos-player (from `../node_modules/@apollosproject/ui-media-player`)"
   - react-native-config (from `../node_modules/react-native-config`)
+  - react-native-flipper (from `../node_modules/react-native-flipper`)
   - "react-native-geolocation (from `../node_modules/@react-native-community/geolocation`)"
   - react-native-geolocation-service (from `../node_modules/react-native-geolocation-service`)
   - react-native-image-picker (from `../node_modules/react-native-image-picker`)
@@ -618,6 +621,8 @@ EXTERNAL SOURCES:
     :path: "../node_modules/@apollosproject/ui-media-player"
   react-native-config:
     :path: "../node_modules/react-native-config"
+  react-native-flipper:
+    :path: "../node_modules/react-native-flipper"
   react-native-geolocation:
     :path: "../node_modules/@react-native-community/geolocation"
   react-native-geolocation-service:
@@ -737,6 +742,7 @@ SPEC CHECKSUMS:
   react-native-amplitude-analytics: b3f6d615c005d22532cdf95701eb6e6b2c454ab2
   react-native-apollos-player: 4ddfa7a5acdd5b5d1015d63c0724a033dfea7166
   react-native-config: 55548054279d92e0e4566ea15a8b9b81028ec342
+  react-native-flipper: 51a1b8f34ce185e028f8158382c3882d6ea3cccf
   react-native-geolocation: c956aeb136625c23e0dce0467664af2c437888c9
   react-native-geolocation-service: f33626f1ae12381ca2ae60f98b2f5edd676bf95a
   react-native-image-picker: 28d8d1f5a643119876b8b2c7d4d1dcfb2b232dd4
