@@ -307,18 +307,19 @@ class dataSource extends ContentItem.dataSource {
 
     // relatedFilesorLinks
     const resources = await Matrix.getItemsFromGuid(
-      item.attributeValues.relatedFilesorLinks?.value
+      item.attributeValues.relatedFilesorLinks?.value || item.attributeValues.actionTable?.value
     );
     if (resources.length) {
       const actions = await Promise.all(
         resources.map(
-          async ({ attributeValues: { linkName, linkUrl, file } }) => {
+          async ({ attributeValues: { linkName, linkUrl, file, title, link } }) => {
             let url = '';
 
-            if (linkUrl.value) {
+            const linkAttr = linkUrl?.value || link?.value
+            if (linkAttr) {
               url = new URL(
-                linkUrl.value,
-                !linkUrl.value.startsWith('http')
+                linkAttr,
+                !linkAttr.startsWith('http')
                   ? ApollosConfig.ROCK.URL
                   : undefined
               );
@@ -329,7 +330,7 @@ class dataSource extends ContentItem.dataSource {
               url = blob.url;
             }
             return {
-              title: linkName.value,
+              title: linkName?.value || title?.value,
               action: 'OPEN_URL',
               relatedNode: { __typename: 'Url', url },
             };
