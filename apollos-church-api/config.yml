@@ -384,6 +384,15 @@ TABS:
   GIVE:
     - type: WebView
       url: ${ROOT_URL}/simpledonation
+    - type: ActionTable
+      actions:
+        [
+          {
+            title: Manage Giving,
+            action: OPEN_AUTHENTICATED_URL,
+            relatedNode: { __typename: Url, url: 'https://fellowshipnwa.org/manage-giving' },
+          },
+        ]
 
   # PRAY: # NOT USED
   #   - algorithms: [DAILY_PRAYER]
